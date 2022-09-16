@@ -61,8 +61,10 @@ export default function Home() {
         <img src='logo.svg' alt='moody logo' className='max-w-[60vw]' />
         {/* count down */}
         <div className='flex space-x-[20px]'>
-          {time_units.map((u) => (
-            <div className='flex flex-col items-center justify-center spcae-y-[5px]'>
+          {time_units.map((u, i) => (
+            <div
+            key={i}
+            className='flex flex-col items-center justify-center spcae-y-[5px]'>
               <p className='text-[40px]'>00</p>
               <p>{u}</p>
             </div>
@@ -151,8 +153,10 @@ export default function Home() {
       <div className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
         <h1 className='text-[10vw]  font-bold mb-[10vw] lg:mb-[2vw]'>TEAM</h1>
         <div className='flex flex-col md:flex-row md:space-x-[100px]'>
-          {team_members.map((m) => (
-            <div className='flex flex-col items-center w-[200px] text-center space-y-[20px] mb-[50px] lg:scale-[1.2] '>
+          {team_members.map((m, i) => (
+            <div
+            key={i}
+            className='flex flex-col items-center w-[200px] text-center space-y-[20px] mb-[50px] lg:scale-[1.2] '>
               <img
                 src={m.img}
                 alt='avatar img'

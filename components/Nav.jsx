@@ -28,8 +28,10 @@ function Nav() {
       </div>
 
       <div className='hidden md:flex items-center uppercase space-x-[2vw] font-bold lg:text-[30px] '>
-        {nav_items.map((i) => (
-          <a>{i}</a>
+        {nav_items.map((i, index) => (
+          <a
+          key={index}
+          >{i}</a>
         ))}
               <ConnectButton />
 
@@ -49,8 +51,10 @@ function Nav() {
           className='absolute top-4 right-4 text-[30px] '
           onClick={() => setOpen(false)}
         />
-        {nav_items.map((i) => (
-          <a>{i}</a>
+        {nav_items.map((i, index) => (
+          <a
+          key={index}
+          >{i}</a>
         ))}
         <ConnectButton />
       </ul>
