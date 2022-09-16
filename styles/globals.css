@@ -1,26 +1,17 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  font-family: 'Studly Free', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-* {
-  box-sizing: border-box;
-}
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+
+.title {
+  @apply p-[10px] text-[40px] pt-[40px] lg:pt-[100px] md:text-start md:text-[80px] ;
+}
+.paragraf {
+  @apply px-[20px] md:w-[30vw] md:text-[1.5vw]  md:text-start pt-[30px];
 }
