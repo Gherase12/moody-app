@@ -2,7 +2,8 @@ import Head from "next/head";
 import Nav from "./../components/Nav";
 import Marquee from "react-fast-marquee";
 import { BsTwitter } from "react-icons/bs";
-import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -44,10 +45,7 @@ export default function Home() {
   ];
 
   return (
-    <motion.div
-      style={{ background }}
-      className='overflow-hidden text-white '
-    >
+    <motion.div style={{ background }} className='overflow-hidden text-white '>
       <Head>
         <title>Moody app</title>
         <meta name='description' content='Moody app' />
@@ -58,13 +56,14 @@ export default function Home() {
       {/* hero */}
       <div className='w-full  flex flex-col items-center pt-[30vw] lg:pt-[10vw] space-y-[10vw] lg:space-y-[4vw]  '>
         {/* logo */}
-        <img src='logo.svg' alt='moody logo' className='max-w-[60vw]' />
+        <Image src='logo.svg' alt='moody logo' className='max-w-[60vw]' />
         {/* count down */}
         <div className='flex space-x-[20px]'>
           {time_units.map((u, i) => (
             <div
-            key={i}
-            className='flex flex-col items-center justify-center spcae-y-[5px]'>
+              key={i}
+              className='flex flex-col items-center justify-center spcae-y-[5px]'
+            >
               <p className='text-[40px]'>00</p>
               <p>{u}</p>
             </div>
@@ -78,9 +77,9 @@ export default function Home() {
       {/* nft s presentations */}
       <div className='w-full my-[10vw] '>
         <Marquee pauseOnHover={false} speed={30} gradient={false}>
-          {Imgs.map((img,i) => (
-            <img
-            key={i}
+          {Imgs.map((img, i) => (
+            <Image
+              key={i}
               src={img}
               className='w-[20vw] h-[20vw] md:mx-[40px] mx-[10px]  rounded-[20px] '
               alt='moddy nft'
@@ -110,8 +109,8 @@ export default function Home() {
               range of experiences through their favorite applications. We
               believe that the future of NFTs will be based on emotion and
               expression, not just scarcity or monetary value.With Moody NFTs
-              you’ll be able to experience a whole new level of immersion when
-              interacting with your favorite digital collectibles who can
+              you&apos;ll be able to experience a whole new level of immersion
+              when interacting with your favorite digital collectibles who can
               provide a range of access to mental health support.
             </div>
           </div>
@@ -121,11 +120,11 @@ export default function Home() {
           <div>
             <h1 className='title'>Social Network</h1>
             <div className='paragraf'>
-              With mO-Ody we want to inspire together. That’s why we’re building
-              a social network where anyone can monetize their talent with the
-              help of NFTs. Creators can share their daily life, their own
-              opinion and thoughts, their passion and be a part of our future
-              collection as partners and collaborators
+              With mO-Ody we want to inspire together. That&apos;s why
+              we&apos;re building a social network where anyone can monetize
+              their talent with the help of NFTs. Creators can share their daily
+              life, their own opinion and thoughts, their passion and be a part
+              of our future collection as partners and collaborators
             </div>
           </div>
           <div>
@@ -134,10 +133,10 @@ export default function Home() {
               mO-Ody holders will be rewarded with free mints of existing and
               upcoming Web3 projects. Our community will get to decide each
               month which projects we should support.We will also reallocate 50
-              % of the monthly royalties into our mo-ody 'savings' wallet and
-              the purchased NFTs will be airdopped to the winners.Phase 2 of the
-              project will provide exclusive mh help and support services for
-              the mO-Ody holders.
+              % of the monthly royalties into our mo-ody &apos;savings&apos;
+              wallet and the purchased NFTs will be airdopped to the
+              winners.Phase 2 of the project will provide exclusive mh help and
+              support services for the mO-Ody holders.
             </div>
           </div>
         </div>
@@ -147,7 +146,11 @@ export default function Home() {
         <h1 className='text-[10vw]  font-bold mb-[10vw] lg:mb-[1vw]'>
           ROADMAP
         </h1>
-        <img src='map.svg ' className='max-w-[1000px] w-[80vw]' alt='roadmap' />
+        <Image
+          src='map.svg '
+          className='max-w-[1000px] w-[80vw]'
+          alt='roadmap'
+        />
       </div>
       {/* team */}
       <div className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
@@ -155,9 +158,10 @@ export default function Home() {
         <div className='flex flex-col md:flex-row md:space-x-[100px]'>
           {team_members.map((m, i) => (
             <div
-            key={i}
-            className='flex flex-col items-center w-[200px] text-center space-y-[20px] mb-[50px] lg:scale-[1.2] '>
-              <img
+              key={i}
+              className='flex flex-col items-center w-[200px] text-center space-y-[20px] mb-[50px] lg:scale-[1.2] '
+            >
+              <Image
                 src={m.img}
                 alt='avatar img'
                 className='rounded-full w-[100px] border-2 border-moody-green-v2 '

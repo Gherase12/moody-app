@@ -4,6 +4,8 @@ import { SiDiscord } from "react-icons/si";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import ConnectButton from './ConnectButton';
+import Image from 'next/image'
+
 function Nav() {
   const [open, setOpen] = useState(false);
   const nav_items = ["our vision", "roadmap", "team"];
@@ -17,7 +19,7 @@ function Nav() {
     <div className='z-50 bg-moody-red fixed w-full h-[60px]  items-center flex justify-between px-[10vw] flex-row-reverse md:flex-row'>
       <div className='flex space-x-[20px]  '>
         <a href=''>
-          <img src='open-sea.svg' className='w-[40px] ' alt='open sea logo' />
+          <Image src='open-sea.svg' className='w-[40px] ' alt='open sea logo' />
         </a>
         <a href='https://twitter.com/im_just_moody'>
           <BsTwitter className='text-moody-green ' size={40} />
