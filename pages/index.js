@@ -15,31 +15,31 @@ export default function Home() {
   );
 
   const time_units = ["DAYS", "HOURS", "MINUTES", "SECONDS"];
-  const Imgs = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
+  const Imgs = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png", "/6.png"];
 
   const team_members = [
     {
       name: "Richard",
       ocupation: "founder & marketing meneger",
-      img: "https://pbs.twimg.com/profile_images/1569414243228827651/zW8UbZ-5_400x400.jpg",
+      img: "/1.png",
       link: "https://twitter.com/JamesDigiJ",
     },
     {
       name: "Richard",
       ocupation: "founder & marketing meneger",
-      img: "https://pbs.twimg.com/profile_images/1569414243228827651/zW8UbZ-5_400x400.jpg",
+      img: "/1.png",
       link: "https://twitter.com/JamesDigiJ",
     },
     {
       name: "Richard",
       ocupation: "founder & marketing meneger",
-      img: "https://pbs.twimg.com/profile_images/1569414243228827651/zW8UbZ-5_400x400.jpg",
+      img: "/1.png",
       link: "https://twitter.com/JamesDigiJ",
     },
     {
       name: "Richard",
       ocupation: "founder & marketing meneger",
-      img: "https://pbs.twimg.com/profile_images/1569414243228827651/zW8UbZ-5_400x400.jpg",
+      img: "/1.png",
       link: "https://twitter.com/JamesDigiJ",
     },
   ];
@@ -54,9 +54,19 @@ export default function Home() {
       <Nav />
 
       {/* hero */}
-      <div className='w-full  flex flex-col items-center pt-[30vw] lg:pt-[10vw] space-y-[10vw] lg:space-y-[4vw]  '>
+      <div className='w-full  flex flex-col items-center pt-[30vw] md:pt-[0.05vw]  space-y-[10vw] lg:space-y-[4vw]  '>
         {/* logo */}
-        <Image src='logo.svg' alt='moody logo' className='max-w-[60vw]' />
+        <div className='w-[60vw]  h-[30vw] '>
+          <Image
+            src='/logo.svg'
+            alt='moody logo'
+            width='100%'
+            height='60%'
+            
+            layout='responsive'
+            objectFit='contain'
+          />
+        </div>
         {/* count down */}
         <div className='flex space-x-[20px]'>
           {time_units.map((u, i) => (
@@ -78,12 +88,19 @@ export default function Home() {
       <div className='w-full my-[10vw] '>
         <Marquee pauseOnHover={false} speed={30} gradient={false}>
           {Imgs.map((img, i) => (
-            <Image
+            <div
+            
               key={i}
-              src={img}
-              className='w-[20vw] h-[20vw] md:mx-[40px] mx-[10px]  rounded-[20px] '
-              alt='moddy nft'
-            />
+            className='w-[20vw] h-[20vw] md:mx-[40px] mx-[10px]  rounded-[20px] '>
+              <Image
+                src={img}
+                alt='moddy nft'
+                width='100%'
+                height='100%'
+                layout='responsive'
+                objectFit='contain'
+              />
+            </div>
           ))}
         </Marquee>
       </div>
@@ -146,11 +163,16 @@ export default function Home() {
         <h1 className='text-[10vw]  font-bold mb-[10vw] lg:mb-[1vw]'>
           ROADMAP
         </h1>
-        <Image
-          src='map.svg '
-          className='max-w-[1000px] w-[80vw]'
-          alt='roadmap'
-        />
+        <div className='max-w-[1000px] w-[80vw]'>
+          <Image
+            src='/map.svg'
+            alt='roadmap'
+            width='100%'
+            height='100%'
+            layout='responsive'
+            objectFit='contain'
+          />
+        </div>
       </div>
       {/* team */}
       <div className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
@@ -161,11 +183,17 @@ export default function Home() {
               key={i}
               className='flex flex-col items-center w-[200px] text-center space-y-[20px] mb-[50px] lg:scale-[1.2] '
             >
-              <Image
-                src={m.img}
-                alt='avatar img'
-                className='rounded-full w-[100px] border-2 border-moody-green-v2 '
-              />
+              <div className='rounded-full w-[100px] border-2 border-moody-green-v2 '>
+                <Image
+                  src={m.img}
+                  alt='avatar img'
+                  style={{ borderRadius: 9999 }}
+                  width='100%'
+                  height='100%'
+                  layout='responsive'
+                  objectFit='contain'
+                />
+              </div>
               <h1 className='text-[20px] font-bold'>{m.name}</h1>
               <h2>{m.ocupation}</h2>
               <a href={m.link}>

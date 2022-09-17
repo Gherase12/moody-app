@@ -3,8 +3,8 @@ import { BsTwitter } from "react-icons/bs";
 import { SiDiscord } from "react-icons/si";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
-import ConnectButton from './ConnectButton';
-import Image from 'next/image'
+import ConnectButton from "./ConnectButton";
+import Image from "next/image";
 
 function Nav() {
   const [open, setOpen] = useState(false);
@@ -19,7 +19,16 @@ function Nav() {
     <div className='z-50 bg-moody-red fixed w-full h-[60px]  items-center flex justify-between px-[10vw] flex-row-reverse md:flex-row'>
       <div className='flex space-x-[20px]  '>
         <a href=''>
-          <Image src='open-sea.svg' className='w-[40px] ' alt='open sea logo' />
+          <div className='w-[40px] '>
+            <Image
+              src='/open-sea.svg'
+              alt='open sea logo'
+              width='100%'
+              height='100%'
+              layout='responsive'
+              objectFit='contain'
+            />
+          </div>
         </a>
         <a href='https://twitter.com/im_just_moody'>
           <BsTwitter className='text-moody-green ' size={40} />
@@ -31,12 +40,9 @@ function Nav() {
 
       <div className='hidden md:flex items-center uppercase space-x-[2vw] font-bold lg:text-[30px] '>
         {nav_items.map((i, index) => (
-          <a
-          key={index}
-          >{i}</a>
+          <a key={index}>{i}</a>
         ))}
-              <ConnectButton />
-
+        <ConnectButton />
       </div>
       <GiHamburgerMenu
         className='text-[25px] text-white md:hidden'
@@ -54,9 +60,7 @@ function Nav() {
           onClick={() => setOpen(false)}
         />
         {nav_items.map((i, index) => (
-          <a
-          key={index}
-          >{i}</a>
+          <a key={index}>{i}</a>
         ))}
         <ConnectButton />
       </ul>
