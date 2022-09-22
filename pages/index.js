@@ -4,8 +4,17 @@ import Marquee from "react-fast-marquee";
 import { BsTwitter } from "react-icons/bs";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
+import useCountdown from "../hooks/useCountdown";
+
 
 export default function Home() {
+  
+  
+
+  const ourVisionRef = useRef(null);
+  const roadmapRef = useRef(null);
+  const teamRef = useRef(null);
   const { scrollY } = useScroll();
 
   const background = useTransform(
@@ -15,32 +24,32 @@ export default function Home() {
   );
 
   const time_units = ["DAYS", "HOURS", "MINUTES", "SECONDS"];
+  
   const Imgs = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png", "/6.png"];
-
   const team_members = [
     {
       name: "Richard",
-      ocupation: "founder & marketing meneger",
-      img: "/1.png",
+      ocupation: "founder & marketing manager",
+      img: "/richard.png",
       link: "https://twitter.com/JamesDigiJ",
     },
     {
-      name: "Richard",
-      ocupation: "founder & marketing meneger",
-      img: "/1.png",
-      link: "https://twitter.com/JamesDigiJ",
+      name: "Kirsti",
+      ocupation: "community manager",
+      img: "/kirsti.png",
+      link: "https://twitter.com/kigiuk",
     },
     {
-      name: "Richard",
-      ocupation: "founder & marketing meneger",
-      img: "/1.png",
-      link: "https://twitter.com/JamesDigiJ",
+      name: "Ana",
+      ocupation: "nft artist",
+      img: "/ana.png",
+      link: "https://twitter.com/anamariaa_m26",
     },
     {
-      name: "Richard",
-      ocupation: "founder & marketing meneger",
-      img: "/1.png",
-      link: "https://twitter.com/JamesDigiJ",
+      name: "Cosmin",
+      ocupation: "blockchain developer",
+      img: "/cosmin.png",
+      link: "https://twitter.com/CosminGherase",
     },
   ];
 
@@ -51,34 +60,33 @@ export default function Home() {
         <meta name='description' content='Moody app' />
         <link rel='icon' href='/logo.svg' />
       </Head>
-      <Nav />
+      <Nav ourVisionRef={ourVisionRef} roadmapRef={roadmapRef} teamRef={teamRef} />
 
       {/* hero */}
       <div className='w-full  flex flex-col items-center pt-[30vw] md:pt-[0.05vw]  space-y-[10vw] lg:space-y-[4vw]  '>
         {/* logo */}
-        <div className='w-[60vw]  h-[30vw] '>
+        <div className='w-[60vw]  h-[30vw] ml-[100px] '>
           <Image
             src='/logo.svg'
             alt='moody logo'
             width='100%'
             height='60%'
-            
             layout='responsive'
             objectFit='contain'
           />
         </div>
         {/* count down */}
-        <div className='flex space-x-[20px]'>
+        {/* <div className='flex space-x-[20px]'>
           {time_units.map((u, i) => (
             <div
               key={i}
               className='flex flex-col items-center justify-center spcae-y-[5px]'
             >
-              <p className='text-[40px]'>00</p>
+              <p className='text-[40px]'>0</p>
               <p>{u}</p>
             </div>
           ))}
-        </div>
+        </div> */}
         {/* mint button */}
         <button className='bg-moody-green-v2 rounded-full w-[150px] h-[40px] font-bold '>
           MINT SOON
@@ -89,9 +97,9 @@ export default function Home() {
         <Marquee pauseOnHover={false} speed={30} gradient={false}>
           {Imgs.map((img, i) => (
             <div
-            
               key={i}
-            className='w-[20vw] h-[20vw] md:mx-[40px] mx-[10px]  rounded-[20px] '>
+              className='w-[20vw] h-[20vw] md:mx-[40px] mx-[10px]  rounded-[20px] '
+            >
               <Image
                 src={img}
                 alt='moddy nft'
@@ -105,7 +113,7 @@ export default function Home() {
         </Marquee>
       </div>
       {/* info */}
-      <div className='grid w-full grid-cols-1 font-bold text-center text-white md:grid-cols-2 '>
+      <div ref={ourVisionRef} className='grid w-full grid-cols-1 font-bold text-center text-white md:grid-cols-2 '>
         <div className='flex flex-col items-center'>
           <div>
             <h1 className='title'>Our Mission</h1>
@@ -159,7 +167,7 @@ export default function Home() {
         </div>
       </div>
       {/* roadmap */}
-      <div className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
+      <div ref={roadmapRef} className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
         <h1 className='text-[10vw]  font-bold mb-[10vw] lg:mb-[1vw]'>
           ROADMAP
         </h1>
@@ -175,7 +183,7 @@ export default function Home() {
         </div>
       </div>
       {/* team */}
-      <div className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
+      <div ref={teamRef} className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
         <h1 className='text-[10vw]  font-bold mb-[10vw] lg:mb-[2vw]'>TEAM</h1>
         <div className='flex flex-col md:flex-row md:space-x-[100px]'>
           {team_members.map((m, i) => (
@@ -187,7 +195,7 @@ export default function Home() {
                 <Image
                   src={m.img}
                   alt='avatar img'
-                  style={{ borderRadius: 9999 }}
+                  style={{ borderRadius: 9999  }}
                   width='100%'
                   height='100%'
                   layout='responsive'

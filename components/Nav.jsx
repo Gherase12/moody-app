@@ -6,9 +6,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import ConnectButton from "./ConnectButton";
 import Image from "next/image";
 
-function Nav() {
+function Nav({ ourVisionRef, roadmapRef, teamRef }) {
   const [open, setOpen] = useState(false);
-  const nav_items = ["our vision", "roadmap", "team"];
+
+  const nav_items = [{name:"our vision",ref: ourVisionRef}, {name:"roadmap",ref:roadmapRef}, {name:"team", ref: teamRef}];
 
   const scrollToElement = (Ref) => {
     setOpen(false);
@@ -40,7 +41,7 @@ function Nav() {
 
       <div className='hidden md:flex items-center uppercase space-x-[2vw] font-bold lg:text-[30px] '>
         {nav_items.map((i, index) => (
-          <a key={index}>{i}</a>
+          <button onClick={() => scrollToElement(i.ref)} key={index}>{i.name}</button>
         ))}
         <ConnectButton />
       </div>
@@ -60,7 +61,7 @@ function Nav() {
           onClick={() => setOpen(false)}
         />
         {nav_items.map((i, index) => (
-          <a key={index}>{i}</a>
+          <button onClick={() => scrollToElement(i.ref)} key={index}>{i.name}</button>
         ))}
         <ConnectButton />
       </ul>
