@@ -29,19 +29,19 @@ export default function Home() {
   const team_members = [
     {
       name: "Richard",
-      ocupation: "founder & marketing manager",
+      ocupation: "co-founder",
       img: "/richard.png",
       link: "https://twitter.com/JamesDigiJ",
     },
     {
       name: "Kirsti",
-      ocupation: "community manager",
+      ocupation: "community manager & co-founder",
       img: "/kirsti.png",
       link: "https://twitter.com/kigiuk",
     },
     {
       name: "Ana",
-      ocupation: "nft artist",
+      ocupation: "nft artist & co-founder",
       img: "/ana.png",
       link: "https://twitter.com/anamariaa_m26",
     },
@@ -65,7 +65,7 @@ export default function Home() {
       {/* hero */}
       <div className='w-full  flex flex-col items-center pt-[30vw] md:pt-[0.05vw]  space-y-[10vw] lg:space-y-[4vw]  '>
         {/* logo */}
-        <div className='w-[60vw]  h-[30vw] ml-[100px] '>
+        <div className='w-[60vw]  h-[30vw] lg:ml-[100px] ml-[20px] '>
           <Image
             src='/logo.svg'
             alt='moody logo'
@@ -203,7 +203,7 @@ export default function Home() {
                 />
               </div>
               <h1 className='text-[20px] font-bold'>{m.name}</h1>
-              <h2>{m.ocupation}</h2>
+              <h2 className="uppercase">{m.ocupation}</h2>
               <a href={m.link}>
                 <BsTwitter className='text-moody-green text-[30px] ' />
               </a>
