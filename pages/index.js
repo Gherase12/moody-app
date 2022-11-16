@@ -7,11 +7,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import useCountdown from "../hooks/useCountdown";
 
-
 export default function Home() {
-  
-  
-
   const ourVisionRef = useRef(null);
   const roadmapRef = useRef(null);
   const teamRef = useRef(null);
@@ -24,7 +20,7 @@ export default function Home() {
   );
 
   const time_units = ["DAYS", "HOURS", "MINUTES", "SECONDS"];
-  
+
   const Imgs = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png", "/6.png"];
   const team_members = [
     {
@@ -33,12 +29,7 @@ export default function Home() {
       img: "/richard.png",
       link: "https://twitter.com/JamesDigiJ",
     },
-    {
-      name: "Kirsti",
-      ocupation: "community manager & co-founder",
-      img: "/kirsti.png",
-      link: "https://twitter.com/kigiuk",
-    },
+
     {
       name: "Ana",
       ocupation: "nft artist & co-founder",
@@ -60,7 +51,11 @@ export default function Home() {
         <meta name='description' content='Moody app' />
         <link rel='icon' href='/logo.svg' />
       </Head>
-      <Nav ourVisionRef={ourVisionRef} roadmapRef={roadmapRef} teamRef={teamRef} />
+      <Nav
+        ourVisionRef={ourVisionRef}
+        roadmapRef={roadmapRef}
+        teamRef={teamRef}
+      />
 
       {/* hero */}
       <div className='w-full  flex flex-col items-center pt-[30vw] md:pt-[0.05vw]  space-y-[10vw] lg:space-y-[4vw]  '>
@@ -113,8 +108,11 @@ export default function Home() {
         </Marquee>
       </div>
       {/* info */}
-      <div ref={ourVisionRef} className='grid w-full grid-cols-1 font-bold text-center text-white md:grid-cols-2 '>
-        <div className='flex flex-col items-center'>
+      <div
+        ref={ourVisionRef}
+        className='grid w-full grid-cols-1 font-bold text-center text-white md:grid-cols-2 lg:grid-cols-3 justify-items-center'
+      >
+        
           <div>
             <h1 className='title'>Our Mission</h1>
             <div className='paragraf'>
@@ -135,13 +133,12 @@ export default function Home() {
               believe that the future of NFTs will be based on emotion and
               expression, not just scarcity or monetary value.With Moody NFTs
               you&apos;ll be able to experience a whole new level of immersion
-              when interacting with your favorite digital collectibles who can
-              provide a range of access to mental health support.
+              when interacting with your favorite digital collectibles. 
             </div>
           </div>
-        </div>
+       
         {/*  */}
-        <div className='flex flex-col items-center md:mt-[300px]'>
+        
           <div>
             <h1 className='title'>Social Network</h1>
             <div className='paragraf'>
@@ -152,22 +149,10 @@ export default function Home() {
               of our future collection as partners and collaborators
             </div>
           </div>
-          <div>
-            <h1 className='title'>Utility</h1>
-            <div className='paragraf'>
-              mO-Ody holders will be rewarded with free mints of existing and
-              upcoming Web3 projects. Our community will get to decide each
-              month which projects we should support.We will also reallocate 50
-              % of the monthly royalties into our mo-ody &apos;savings&apos;
-              wallet and the purchased NFTs will be airdopped to the
-              winners.Phase 2 of the project will provide exclusive mh help and
-              support services for the mO-Ody holders.
-            </div>
-          </div>
-        </div>
+        
       </div>
       {/* roadmap */}
-      <div ref={roadmapRef} className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
+      {/* <div ref={roadmapRef} className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
         <h1 className='text-[10vw]  font-bold mb-[10vw] lg:mb-[1vw]'>
           ROADMAP
         </h1>
@@ -181,9 +166,12 @@ export default function Home() {
             objectFit='contain'
           />
         </div>
-      </div>
+      </div> */}
       {/* team */}
-      <div ref={teamRef} className='flex flex-col items-center my-[30vw] lg:my-[10vw]'>
+      <div
+        ref={teamRef}
+        className='flex flex-col items-center my-[30vw] lg:my-[10vw]'
+      >
         <h1 className='text-[10vw]  font-bold mb-[10vw] lg:mb-[2vw]'>TEAM</h1>
         <div className='flex flex-col md:flex-row md:space-x-[100px]'>
           {team_members.map((m, i) => (
@@ -195,7 +183,7 @@ export default function Home() {
                 <Image
                   src={m.img}
                   alt='avatar img'
-                  style={{ borderRadius: 9999  }}
+                  style={{ borderRadius: 9999 }}
                   width='100%'
                   height='100%'
                   layout='responsive'
@@ -203,7 +191,7 @@ export default function Home() {
                 />
               </div>
               <h1 className='text-[20px] font-bold'>{m.name}</h1>
-              <h2 className="uppercase">{m.ocupation}</h2>
+              <h2 className='uppercase'>{m.ocupation}</h2>
               <a href={m.link}>
                 <BsTwitter className='text-moody-green text-[30px] ' />
               </a>

@@ -6,10 +6,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import ConnectButton from "./ConnectButton";
 import Image from "next/image";
 
-function Nav({ ourVisionRef, roadmapRef, teamRef }) {
+function Nav({ ourVisionRef,  teamRef }) {
   const [open, setOpen] = useState(false);
 
-  const nav_items = [{name:"our vision",ref: ourVisionRef}, {name:"roadmap",ref:roadmapRef}, {name:"team", ref: teamRef}];
+  const nav_items = [{name:"Our vision",ref: ourVisionRef}, {name:"team", ref: teamRef}];
 
   const scrollToElement = (Ref) => {
     setOpen(false);

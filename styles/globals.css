@@ -10,8 +10,8 @@ html{
 
 
 .title {
-  @apply p-[10px] text-[40px] pt-[40px] lg:pt-[100px] md:text-start md:text-[80px] ;
+  @apply p-[10px] text-[40px] pt-[40px] lg:pt-[100px] lg:px-[30px] md:text-center md:text-[55px] ;
 }
 .paragraf {
-  @apply px-[20px] md:w-[30vw] md:text-[1.5vw]  md:text-start pt-[30px];
+  @apply px-[40px] md:w-[30vw] md:text-[1vw]  md:text-center pt-[30px];
 }
