@@ -9,7 +9,7 @@ import Image from "next/image";
 function Nav({ ourVisionRef,  teamRef }) {
   const [open, setOpen] = useState(false);
 
-  const nav_items = [{name:"Our vision",ref: ourVisionRef}, {name:"team", ref: teamRef}];
+  const nav_items = [{name:"OUR VISION",ref: ourVisionRef}, {name:"TEAM", ref: teamRef}];
 
   const scrollToElement = (Ref) => {
     setOpen(false);

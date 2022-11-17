@@ -24,20 +24,20 @@ export default function Home() {
   const Imgs = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png", "/6.png"];
   const team_members = [
     {
-      name: "Richard",
+      name: "RICHARD",
       ocupation: "co-founder",
       img: "/richard.png",
-      link: "https://twitter.com/JamesDigiJ",
+      link: "https://twitter.com/JamesDigiJS",
     },
 
     {
-      name: "Ana",
+      name: "ANA",
       ocupation: "nft artist & co-founder",
       img: "/ana.png",
       link: "https://twitter.com/anamariaa_m26",
     },
     {
-      name: "Cosmin",
+      name: "COSMIN",
       ocupation: "blockchain developer",
       img: "/cosmin.png",
       link: "https://twitter.com/CosminGherase",
@@ -114,7 +114,7 @@ export default function Home() {
       >
         
           <div>
-            <h1 className='title'>Our Mission</h1>
+            <h1 className='title'>OUR MISSION</h1>
             <div className='paragraf'>
               mO-Ody NFTs are the next step in emotional NFTs MO-Ody NFTs is an
               NFT project that aims to bring more emotional and human-like
@@ -125,13 +125,13 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <h1 className='title'>The future</h1>
+            <h1 className='title'>THE FUTURE</h1>
             <div className='paragraf'>
               As we continue expanding our collection of NFTs and their
               features, we want our users to have access to the widest possible
               range of experiences through their favorite applications. We
               believe that the future of NFTs will be based on emotion and
-              expression, not just scarcity or monetary value.With Moody NFTs
+              expression, not just scarcity or monetary value. With Moody NFTs
               you&apos;ll be able to experience a whole new level of immersion
               when interacting with your favorite digital collectibles. 
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
         {/*  */}
         
           <div>
-            <h1 className='title'>Social Network</h1>
+            <h1 className='title'>SOCIAL NETWORK</h1>
             <div className='paragraf'>
               With mO-Ody we want to inspire together. That&apos;s why
               we&apos;re building a social network where anyone can monetize
